@@ -8,6 +8,9 @@ namespace RobotsVDinousaurs
 {
     class Herd
     {
+        Dinosaurs mastodon = new Dinosaurs("Mastodon", 30);
+        Dinosaurs raptor = new Dinosaurs("Raptor", 35);
+        Dinosaurs tRex = new Dinosaurs("Trex", 45);
         // Member Variables
 
         // Constructor

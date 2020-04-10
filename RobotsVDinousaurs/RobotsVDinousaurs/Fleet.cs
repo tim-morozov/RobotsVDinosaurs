@@ -8,6 +8,9 @@ namespace RobotsVDinousaurs
 {
     class Fleet
     {
+        Robots robotron = new Robots("Robotron");
+        Robots robocop = new Robots("Robocop");
+        Robots bumblebee = new Robots("Bumblebee");
         // Member Variables
 
         // Constructor
