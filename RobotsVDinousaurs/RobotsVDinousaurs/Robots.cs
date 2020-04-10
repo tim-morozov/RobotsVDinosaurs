@@ -13,10 +13,16 @@ namespace RobotsVDinousaurs
         public int health;
         public int powerLevel;
         // Constructor
-        public Robots()
+        public Robots(string name)
+        {
+            this.name = name;
+            health = 100;
+            powerLevel = 100;
+        }
+        //Member Methods
+        public void RoboAttack()
         {
 
         }
-        //Member Methods
     }
 }

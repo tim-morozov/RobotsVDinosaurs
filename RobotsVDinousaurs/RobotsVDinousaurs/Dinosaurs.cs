@@ -14,10 +14,18 @@ namespace RobotsVDinousaurs
         public int energy;
         public int attackPower;
         // Constructor
-        public Dinosaurs()
+        public Dinosaurs(string type, int attackPower)
         {
+            this.type = type;
+            this.attackPower = attackPower;
+            energy = 100;
+            health = 100;
 
         }
         //Member Methods
+        public void DinoAttack()
+        {
+
+        }
     }
 }
