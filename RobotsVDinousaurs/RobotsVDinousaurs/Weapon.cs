@@ -9,7 +9,8 @@ namespace RobotsVDinousaurs
     class Weapon
     {
         // Member Variables
-
+        public string weaponType;
+        public string attackPower;
         // Constructor
         public Weapon()
         {

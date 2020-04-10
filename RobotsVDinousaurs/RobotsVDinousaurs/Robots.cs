@@ -9,7 +9,9 @@ namespace RobotsVDinousaurs
     class Robots
     {
         // Member Variables
-
+        public string name;
+        public int health;
+        public int powerLevel;
         // Constructor
         public Robots()
         {
