@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace RobotsVDinousaurs
 {
-    class Dinosaurs
+    class Robot
     {
         // Member Variables
-        public string type;
+        public string name;
         public int health;
-        public int energy;
-        public int attackPower;
+        public int powerLevel;
         // Constructor
-        public Dinosaurs(string type, int attackPower)
+        public Robot(string name)
         {
-            this.type = type;
-            this.attackPower = attackPower;
-            energy = 100;
+            this.name = name;
             health = 100;
-
+            powerLevel = 100; 
         }
         //Member Methods
-        public void DinoAttack()
+        public void RoboAttack()
         {
 
         }
