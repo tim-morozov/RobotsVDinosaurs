@@ -8,6 +8,9 @@ namespace RobotsVDinousaurs
 {
     class Battlefield
     {
+        Herd dinoHerd = new Herd();
+        Fleet roboFleet = new Fleet();
+
         // Member Variables
 
         // Constructor
@@ -16,5 +19,9 @@ namespace RobotsVDinousaurs
 
         }
         //Member Methods
+        public void Battle()
+        {
+
+        }
     }
 }
