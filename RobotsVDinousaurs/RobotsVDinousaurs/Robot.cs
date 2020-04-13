@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace RobotsVDinousaurs
 {
@@ -17,7 +18,7 @@ namespace RobotsVDinousaurs
         public Weapon spear = new Weapon("Spear", 35);
         public List<Weapon> weaponsList = new List<Weapon>();
         Weapon roboWeapon;
-        
+        Random random = new Random();
         
         
 
@@ -36,13 +37,19 @@ namespace RobotsVDinousaurs
 
         }
         //Member Methods
+        public int RandomNumber(int min, int max , Random random)
+        {
+           int index = random.Next(min, max);
+            return index;
+        }
+        
         public Weapon AddWeapon()
         {
-            for (int i = 0; i <= 2; i++)
-            {
-                roboWeapon = weaponsList[i];                            
-            }
-            return roboWeapon;
+            int i = RandomNumber(0, weaponsList.Count, random);
+            
+                roboWeapon = weaponsList[i];
+                weaponsList.RemoveAt(i);
+                return roboWeapon;
         }
 
         public int RoboAttack(int enemyHealth)
