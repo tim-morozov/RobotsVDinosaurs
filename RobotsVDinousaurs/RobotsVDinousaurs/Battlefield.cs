@@ -8,44 +8,68 @@ namespace RobotsVDinousaurs
 {
     class Battlefield
     {
-        Herd dinoHerd = new Herd();
-        Fleet roboFleet = new Fleet();
+        Herd dinoHerd ;
+        Fleet roboFleet;
         
         // Member Variables
 
         // Constructor
         public Battlefield()
         {
-
+            dinoHerd = new Herd();
+            roboFleet = new Fleet();
         }
         //Member Methods
-        public void Battle()
+        public void Round()
         {
-            
-            Console.WriteLine("Ready to battle");
-            while(dinoHerd.herdHealth > 0 || roboFleet.fleetHealth > 0)
+            for (int i = 0; i < roboFleet.rList.Count || i < dinoHerd.dList.Count; i++)
             {
-
-               roboFleet.fleetHealth = dinoHerd.mastodon.DinoAttack(roboFleet.fleetHealth);
-               dinoHerd.herdHealth = roboFleet.robotron.RoboAttack(dinoHerd.herdHealth);
-                if (dinoHerd.herdHealth > roboFleet.fleetHealth)
+                dinoHerd.dList[i].health -= roboFleet.rList[i].RoboAttack(dinoHerd.dList[i].health);
+                roboFleet.rList[i].health -= dinoHerd.dList[i].DinoAttack(roboFleet.rList[i].health);
+                if (roboFleet.rList[i].health <= 0)
                 {
-                    Console.WriteLine("The Dinosaurs are in the lead!");
-
+                    roboFleet.rList.RemoveAt(i);
                 }
-                else
+                else if (dinoHerd.dList[i].health <= 0)
                 {
-                    Console.WriteLine("The robots are in the lead!");
+                    dinoHerd.dList.RemoveAt(i);
                 }
             }
-           if(dinoHerd.herdHealth > 0)
+
+        }
+        public void CompareHealth()
+        {
+            if (dinoHerd.herdHealth > roboFleet.fleetHealth)
+            {
+                Console.WriteLine("The Dinosaurs are in the lead!");
+
+            }
+            else
+            {
+                Console.WriteLine("The robots are in the lead!");
+            }
+
+        }
+        public void DeclareWinner()
+        {
+            if (dinoHerd.herdHealth > 0)
             {
                 Console.WriteLine("The Dinosaurs have won!");
             }
-           else
+            else
             {
                 Console.WriteLine("The Robots have won!");
             }
+
+        }
+        
+        public void Battle()
+        {
+            
+            Console.WriteLine("Ready to battle!");
+            Console.ReadLine();
+            
+           
         }
     }
 }

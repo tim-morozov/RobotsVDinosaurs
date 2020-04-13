@@ -48,7 +48,6 @@ namespace RobotsVDinousaurs
             int i = RandomNumber(0, weaponsList.Count, random);
             
                 roboWeapon = weaponsList[i];
-                weaponsList.RemoveAt(i);
                 return roboWeapon;
         }
 
