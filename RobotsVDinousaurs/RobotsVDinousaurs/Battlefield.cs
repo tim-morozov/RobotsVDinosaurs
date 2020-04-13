@@ -22,6 +22,20 @@ namespace RobotsVDinousaurs
         public void Battle()
         {
             Console.WriteLine("Ready to battle");
+            while(dinoHerd.herdHealth > 0 || roboFleet.fleetHealth > 0)
+            {
+               roboFleet.fleetHealth = dinoHerd.mastodon.DinoAttack(roboFleet.fleetHealth);
+                roboFleet.robotron.RoboAttack();
+                if (dinoHerd.herdHealth < roboFleet.fleetHealth)
+                {
+                    Console.WriteLine("The Dinosaurs are in the lead!");
+
+                }
+                else
+                {
+                    Console.WriteLine("The robots are in the lead!");
+                }
+            }
             
         }
     }

@@ -12,6 +12,15 @@ namespace RobotsVDinousaurs
         public string name;
         public int health;
         public int powerLevel;
+        public Weapon blaster = new Weapon("Blaster", 30);
+        public Weapon electroBlade = new Weapon("Electro-Blade", 50);
+        public Weapon spear = new Weapon("Spear", 35);
+        
+        
+        
+        
+
+        
         // Constructor
         public Robot(string name)
         {

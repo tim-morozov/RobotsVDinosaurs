@@ -23,10 +23,11 @@ namespace RobotsVDinousaurs
 
         }
         //Member Methods
-        public void DinoAttack()
+        public int DinoAttack(int enemyHealth)
         {
              
-
+            int result = enemyHealth - attackPower;
+            return result;
         }
     }
 }

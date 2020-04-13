@@ -8,9 +8,11 @@ namespace RobotsVDinousaurs
 {
     class Fleet
     {
-        Robot robotron = new Robot("Robotron");
-        Robot robocop = new Robot("Robocop");
-        Robot bumblebee = new Robot("Bumblebee");
+       public Robot robotron = new Robot("Robotron");
+       public Robot robocop = new Robot("Robocop");
+       public Robot bumblebee = new Robot("Bumblebee");
+        
+        
 
         // Member Variables
         public int fleetHealth;

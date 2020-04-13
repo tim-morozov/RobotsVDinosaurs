@@ -10,10 +10,12 @@ namespace RobotsVDinousaurs
     {
         // Member Variables
         public string weaponType;
-        public string attackPower;
+        public int attackPower;
         // Constructor
-        public Weapon()
+        public Weapon(string weaponType, int attackPower)
         {
+            this.weaponType = weaponType;
+            this.attackPower = attackPower;
 
         }
         //Member Methods
