@@ -15,7 +15,7 @@ namespace RobotsVDinousaurs
         public Weapon blaster = new Weapon("Blaster", 30);
         public Weapon electroBlade = new Weapon("Electro-Blade", 50);
         public Weapon spear = new Weapon("Spear", 35);
-        public List<Weapon> weaponsList;
+        public List<Weapon> weaponsList = new List<Weapon>();
         Weapon roboWeapon;
         
         
@@ -31,12 +31,20 @@ namespace RobotsVDinousaurs
             weaponsList.Add(blaster);
             weaponsList.Add(electroBlade);
             weaponsList.Add(spear);
-            
-            
+             
+            roboWeapon = AddWeapon();
+
         }
         //Member Methods
+        public Weapon AddWeapon()
+        {
+            for (int i = 0; i <= 2; i++)
+            {
+                roboWeapon = weaponsList[i];                            
+            }
+            return roboWeapon;
+        }
 
-       
         public int RoboAttack(int enemyHealth)
         {
             enemyHealth -= roboWeapon.weaponPower;

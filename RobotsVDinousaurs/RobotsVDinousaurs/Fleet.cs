@@ -11,8 +11,9 @@ namespace RobotsVDinousaurs
        public Robot robotron = new Robot("Robotron");
        public Robot robocop = new Robot("Robocop");
        public Robot bumblebee = new Robot("Bumblebee");
-       public List<Robot> rFleet;
+       public List<Robot> rFleet = new List<Robot>();
         
+       
 
         // Member Variables
         public int fleetHealth;
@@ -21,7 +22,7 @@ namespace RobotsVDinousaurs
         public Fleet()
         {
             this.fleetHealth = bumblebee.health + robocop.health + robotron.health;
-            rFleet.Add(robocop);
+            rFleet.Add(robotron);
             rFleet.Add(robocop);
             rFleet.Add(bumblebee);
         }
