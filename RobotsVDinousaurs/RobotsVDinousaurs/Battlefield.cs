@@ -12,7 +12,7 @@ namespace RobotsVDinousaurs
         Fleet roboFleet = new Fleet();
 
         // Member Variables
-
+        
         // Constructor
         public Battlefield()
         {
@@ -21,7 +21,8 @@ namespace RobotsVDinousaurs
         //Member Methods
         public void Battle()
         {
-
+            Console.WriteLine("Ready to battle");
+            
         }
     }
 }

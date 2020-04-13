@@ -11,11 +11,14 @@ namespace RobotsVDinousaurs
         Robot robotron = new Robot("Robotron");
         Robot robocop = new Robot("Robocop");
         Robot bumblebee = new Robot("Bumblebee");
-        // Member Variables
 
+        // Member Variables
+        public int fleetHealth;
+         
         // Constructor
         public Fleet()
         {
+            this.fleetHealth = bumblebee.health + robocop.health + robotron.health;
 
         }
         //Member Methods

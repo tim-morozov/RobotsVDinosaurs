@@ -8,15 +8,16 @@ namespace RobotsVDinousaurs
 {
     class Herd
     {
-        Dinosaur mastodon = new Dinosaur("Mastodon", 30);
-        Dinosaur raptor = new Dinosaur("Raptor", 35);
-        Dinosaur tRex = new Dinosaur("Trex", 45);
+         public Dinosaur mastodon = new Dinosaur("Mastodon", 30);
+         public Dinosaur raptor = new Dinosaur("Raptor", 35);
+         public Dinosaur tRex = new Dinosaur("Trex", 45);
         // Member Variables
 
+        public int herdHealth;
         // Constructor
         public Herd()
         {
-
+            this.herdHealth = mastodon.health + raptor.health + tRex.health;
         }
         //Member Methods
     }
