@@ -16,7 +16,7 @@ namespace RobotsVDinousaurs
         public Weapon electroBlade = new Weapon("Electro-Blade", 50);
         public Weapon spear = new Weapon("Spear", 35);
         public List<Weapon> weaponsList;
-        
+        Weapon roboWeapon;
         
         
         
@@ -31,11 +31,16 @@ namespace RobotsVDinousaurs
             weaponsList.Add(blaster);
             weaponsList.Add(electroBlade);
             weaponsList.Add(spear);
+            
+            
         }
         //Member Methods
-        public void RoboAttack()
-        {
 
+       
+        public int RoboAttack(int enemyHealth)
+        {
+            enemyHealth -= roboWeapon.weaponPower;
+            return enemyHealth;
         }
     }
 }

@@ -10,6 +10,9 @@ namespace RobotsVDinousaurs
     {
         static void Main(string[] args)
         {
+            Battlefield myBattleField = new Battlefield();
+            myBattleField.Battle();
+            Console.ReadLine();
         }
     }
 }
