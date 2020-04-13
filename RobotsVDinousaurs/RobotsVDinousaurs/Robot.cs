@@ -15,6 +15,7 @@ namespace RobotsVDinousaurs
         public Weapon blaster = new Weapon("Blaster", 30);
         public Weapon electroBlade = new Weapon("Electro-Blade", 50);
         public Weapon spear = new Weapon("Spear", 35);
+        public List<Weapon> weaponsList;
         
         
         
@@ -26,7 +27,10 @@ namespace RobotsVDinousaurs
         {
             this.name = name;
             health = 100;
-            powerLevel = 100; 
+            powerLevel = 100;
+            weaponsList.Add(blaster);
+            weaponsList.Add(electroBlade);
+            weaponsList.Add(spear);
         }
         //Member Methods
         public void RoboAttack()
