@@ -25,11 +25,14 @@ namespace RobotsVDinousaurs
             roboFleet = new Fleet();
         }
         //Member Methods
+        
+            //Round method executes until one opponent has no health left over
         public void Round(Dinosaur dinoOpponent, Robot roboOpponnent)
         {
             dinoOpponent.health = roboOpponnent.RoboAttack(dinoOpponent.health);
             roboOpponnent.health = dinoOpponent.DinoAttack(roboOpponnent.health);
         }
+        //Compares which opponent has fallen
         public void CompareHealth(int dinoHealth, int roboHealth)
         {
             if (dinoHealth > roboHealth)
@@ -45,6 +48,8 @@ namespace RobotsVDinousaurs
             
 
         }
+        //Decides which team won based on how many opponents it lost
+        //If one side lost more than the size of the team, then the other team wins
         public void DeclareWinner()
         {
             if (dinoDown < roboDown)
@@ -62,6 +67,8 @@ namespace RobotsVDinousaurs
 
         public void Battle()
         {
+            //Variables allowing each team to switch fighters once one is out of health
+            //Moving along each list index
             dinoFighter = dinoHerd.dList[dinoDown];
             roboFighter = roboFleet.rList[roboDown];
            
@@ -71,6 +78,7 @@ namespace RobotsVDinousaurs
                 Round(dinoFighter, roboFighter);
             }
              CompareHealth(dinoFighter.health, roboFighter.health);
+            
             if (dinoDown < 3 && roboDown < 3)
             {
                 dinoFighter = dinoHerd.dList[dinoDown];
@@ -82,7 +90,7 @@ namespace RobotsVDinousaurs
             }
 
         }
-
+        //The method that everything will run inside
         public void Run()
         {
             Console.WriteLine("Ready to battle!");

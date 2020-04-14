@@ -43,7 +43,7 @@ namespace RobotsVDinousaurs
             int index = random.Next(min, max);
             return index;
         }
-
+        //Randomly adds a weapon to each Robot object
         public Weapon AddWeapon()
         {
             int i = RandomNumber(0, weaponsList.Count, random);
