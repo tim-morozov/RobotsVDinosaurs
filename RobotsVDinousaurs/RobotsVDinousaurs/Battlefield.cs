@@ -10,6 +10,11 @@ namespace RobotsVDinousaurs
     {
         Herd dinoHerd ;
         Fleet roboFleet;
+        Dinosaur dinoFighter;
+        Robot roboFighter;
+        int dinoDown = 0;
+        int roboDown = 0;
+
         
         // Member Variables
 
@@ -20,39 +25,29 @@ namespace RobotsVDinousaurs
             roboFleet = new Fleet();
         }
         //Member Methods
-        public void Round()
+        public void Round(Dinosaur dinoOpponent, Robot roboOpponnent)
         {
-            for (int i = 0; i < roboFleet.rList.Count || i < dinoHerd.dList.Count; i++)
-            {
-                dinoHerd.dList[i].health -= roboFleet.rList[i].RoboAttack(dinoHerd.dList[i].health);
-                roboFleet.rList[i].health -= dinoHerd.dList[i].DinoAttack(roboFleet.rList[i].health);
-                if (roboFleet.rList[i].health <= 0)
-                {
-                    roboFleet.rList.RemoveAt(i);
-                }
-                else if (dinoHerd.dList[i].health <= 0)
-                {
-                    dinoHerd.dList.RemoveAt(i);
-                }
-            }
-
+            dinoOpponent.health = roboOpponnent.RoboAttack(dinoOpponent.health);
+            roboOpponnent.health = dinoOpponent.DinoAttack(roboOpponnent.health);
         }
-        public void CompareHealth()
+        public void CompareHealth(int dinoHealth, int roboHealth)
         {
-            if (dinoHerd.herdHealth > roboFleet.fleetHealth)
+            if (dinoHealth > roboHealth)
             {
-                Console.WriteLine("The Dinosaurs are in the lead!");
-
+                roboDown++;
+                
             }
             else
             {
-                Console.WriteLine("The robots are in the lead!");
+                dinoDown ++;
+
             }
+            
 
         }
         public void DeclareWinner()
         {
-            if (dinoHerd.herdHealth > 0)
+            if (dinoDown < roboDown)
             {
                 Console.WriteLine("The Dinosaurs have won!");
             }
@@ -62,14 +57,42 @@ namespace RobotsVDinousaurs
             }
 
         }
-        
+
+
+
         public void Battle()
         {
+            dinoFighter = dinoHerd.dList[dinoDown];
+            roboFighter = roboFleet.rList[roboDown];
+           
             
+            while (dinoFighter.health >= 0 && roboFighter.health >= 0)
+            {
+                Round(dinoFighter, roboFighter);
+            }
+             CompareHealth(dinoFighter.health, roboFighter.health);
+            if (dinoDown < 3 && roboDown < 3)
+            {
+                dinoFighter = dinoHerd.dList[dinoDown];
+                roboFighter = roboFleet.rList[roboDown];
+            }
+            else
+            {
+                DeclareWinner(); 
+            }
+
+        }
+
+        public void Run()
+        {
             Console.WriteLine("Ready to battle!");
-            Console.ReadLine();
-            
+            while (roboDown < 3 && dinoDown < 3)
+            {
+                Battle();
+                
+            }
            
         }
+        
     }
 }

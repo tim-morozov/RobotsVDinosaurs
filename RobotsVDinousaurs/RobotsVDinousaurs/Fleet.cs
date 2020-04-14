@@ -10,7 +10,7 @@ namespace RobotsVDinousaurs
     {
        public Robot robotron = new Robot("Robotron");
        public Robot robocop = new Robot("Robocop");
-       public Robot bumblebee = new Robot("Bumblebee");
+        public Robot bumblebee = new Robot("Bumblebee");
        public List<Robot> rList = new List<Robot>();
         
        

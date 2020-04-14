@@ -13,10 +13,11 @@ namespace RobotsVDinousaurs
         public string name;
         public int health;
         public int powerLevel;
+        public List<Weapon> weaponsList = new List<Weapon>();
         public Weapon blaster = new Weapon("Blaster", 30);
         public Weapon electroBlade = new Weapon("Electro-Blade", 50);
         public Weapon spear = new Weapon("Spear", 35);
-        public List<Weapon> weaponsList = new List<Weapon>();
+        
         Weapon roboWeapon;
         Random random = new Random();
         
@@ -32,23 +33,23 @@ namespace RobotsVDinousaurs
             weaponsList.Add(blaster);
             weaponsList.Add(electroBlade);
             weaponsList.Add(spear);
-             
-            roboWeapon = AddWeapon();
+
+            this.roboWeapon = AddWeapon();
 
         }
         //Member Methods
-        public int RandomNumber(int min, int max , Random random)
+        public int RandomNumber(int min, int max, Random random)
         {
-           int index = random.Next(min, max);
+            int index = random.Next(min, max);
             return index;
         }
-        
+
         public Weapon AddWeapon()
         {
             int i = RandomNumber(0, weaponsList.Count, random);
-            
-                roboWeapon = weaponsList[i];
-                return roboWeapon;
+
+            roboWeapon = weaponsList[i];
+            return roboWeapon;
         }
 
         public int RoboAttack(int enemyHealth)
